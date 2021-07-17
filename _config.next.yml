@@ -1,0 +1,92 @@
+scheme: Pisces
+
+menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  friends: /friends/ || fa fa-user-friends
+  about: /about/ || fa fa-child
+
+footer:
+  since: 2016
+  powered: true
+  beian:
+    enable: true
+    icp: 湘ICP备2021000702号-1
+    gongan_id: 2021000702
+    # gongan_num: 京公网安备 1234567890号
+    # gongan_icon_url: /uploads/beian.png
+
+
+darkmode: true
+
+pjax: true
+
+preconnect: true
+mobile_layout_economy: true
+
+reading_progress:
+  enable: true
+  # Available values: left | right
+  start_at: left
+  # Available values: top | bottom
+  position: top
+  reversed: false
+  color: "#37c6c0"
+  height: 2px
+
+# font:
+#   # Use custom fonts families or not.
+#   # Depended options: `external` and `family`.
+#   enable: true
+
+#   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
+#   host:
+
+#   # Font options:
+#   # `external: true` will load this font family from `host` above.
+#   # `family: Times New Roman`. Without any quotes.
+#   # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+#   # Global font settings used for all elements inside <body>.
+#   global:
+#     external: true
+#     family: Monda
+#     size: 1.125
+
+#   # Font settings for site title (.site-title).
+#   title:
+#     external: true
+#     family: Lobster Two
+#     size:
+
+#   # Font settings for headlines (<h1> to <h6>).
+#   headings:
+#     external: true
+#     family: Amita
+#     size:
+
+#   # Font settings for posts (.post-body).
+#   posts:
+#     external: true
+#     family: Montserrat
+
+#   # Font settings for <code> and code blocks.
+#   codes:
+#     external: true
+#     family: PT Mono
+
+math:
+  # Default (false) will load mathjax / katex script on demand.
+  # That is it only render those page which has `mathjax: true` in front-matter.
+  # If you set it to true, it will load mathjax / katex srcipt EVERY PAGE.
+  every_page: false
+
+  mathjax:
+    enable: true
+    # Available values: none | ams | all
+    tags: none
+
+  katex:
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false
