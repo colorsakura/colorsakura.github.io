@@ -30,8 +30,8 @@ jobs:
           echo ::set-output name=status::success
     
     - name: 'GitHub Push'
-        if: steps.commit.output.status != 'success'
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      if: steps.commit.output.status != 'success'
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
