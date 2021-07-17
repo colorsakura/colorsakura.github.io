@@ -16,7 +16,7 @@ jobs:
         node-version: '14.x'
 
     - name: Setup
-      run: yarn install
+      run: npm install
 
     - name: Generate
       run: hexo clean && hexo generate
