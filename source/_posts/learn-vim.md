@@ -4,10 +4,10 @@ date: 2021-05-25
 tags: ['Vim', 'Doc']
 ---
 
-**"Vim is a greatly improved version of the good old UNIX editor Vi." **
+"**Vim is a greatly improved version of the good old UNIX editor Vi**."
 <!-- more -->
 
-![learn vim cover](./images/learn-vim.png)
+![learn vim cover](../images/learn-vim.png)
 
 ### VIM 模式
 
@@ -18,8 +18,10 @@ tags: ['Vim', 'Doc']
 - 替换模式：如果我们想修改某个字符，不需要先进入插入模式，删除，然后再输入新的字符，直接在普通模式下，敲击`R`键就可以直接替换。
 - EX 模式：类似于命令行模式，可以一次运行多个命令  
 
-:::tip 在任意模式下都可以按 `ESC` 回到普通模式。
-:::
+{% note info %}
+在**任意模式**下都可以按 `ESC` 回到**普通模式**。
+{% endnote %}
+
 
 ### VIM 光标移动
 

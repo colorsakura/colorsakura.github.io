@@ -3,6 +3,7 @@ scheme: Pisces
 menu:
   home: / || fa fa-home
   archives: /archives/ || fa fa-archive
+  tags: /tags/ || fas fa-tags
   apps: /apps/ || fas fa-dice-d6
   friends: /friends/ || fa fa-user-friends
   about: /about/ || fa fa-child
@@ -91,3 +92,15 @@ math:
     enable: false
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
     copy_tex: false
+
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: simple
+  icons: false
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: 0
