@@ -85,6 +85,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fas fa-tags fa-fw"></i>标签</a></li>
         <li class="menu-item menu-item-apps"><a href="/apps/" rel="section"><i class="fas fa-dice-d6 fa-fw"></i>应用</a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-user-friends fa-fw"></i>友链</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-child fa-fw"></i>关于</a></li>
@@ -177,72 +178,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://52bilibili.com/2021/07/18/%E5%85%8Dsudo%20docker%E5%91%BD%E4%BB%A4%E7%AE%80%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ヘンタイ绅士">
-      <meta itemprop="description" content="Your Dream, I Display">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="52Bilibili">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/18/%E5%85%8Dsudo%20docker%E5%91%BD%E4%BB%A4%E7%AE%80%E5%8C%96/" class="post-title-link" itemprop="url">设置非root账号不用sudo直接执行docker命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-07-18 13:08:28" itemprop="dateCreated datePublished" datetime="2021-07-18T13:08:28+08:00">2021-07-18</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">groupadd</span> docker
-<span class="token function">sudo</span> gpasswd -a <span class="token variable">$&#123;<span class="token environment constant">USER</span>&#125;</span> docker
-<span class="token function">sudo</span> systemctl restart docker
-<span class="token function">sudo</span> <span class="token function">chmod</span> a+rw /var/run/docker.sock<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://52bilibili.com/2021/07/18/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -267,7 +202,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-07-18 13:08:28" itemprop="dateCreated datePublished" datetime="2021-07-18T13:08:28+08:00">2021-07-18</time>
+      <time title="创建时间：2021-07-18 13:21:55" itemprop="dateCreated datePublished" datetime="2021-07-18T13:21:55+08:00">2021-07-18</time>
     </span>
 
   
@@ -294,6 +229,72 @@
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://52bilibili.com/2021/07/18/%E5%85%8Dsudo%20docker%E5%91%BD%E4%BB%A4%E7%AE%80%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ヘンタイ绅士">
+      <meta itemprop="description" content="Your Dream, I Display">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="52Bilibili">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/07/18/%E5%85%8Dsudo%20docker%E5%91%BD%E4%BB%A4%E7%AE%80%E5%8C%96/" class="post-title-link" itemprop="url">设置非root账号不用sudo直接执行docker命令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-07-18 13:21:55" itemprop="dateCreated datePublished" datetime="2021-07-18T13:21:55+08:00">2021-07-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">groupadd</span> docker
+<span class="token function">sudo</span> gpasswd -a <span class="token variable">$&#123;<span class="token environment constant">USER</span>&#125;</span> docker
+<span class="token function">sudo</span> systemctl restart docker
+<span class="token function">sudo</span> <span class="token function">chmod</span> a+rw /var/run/docker.sock<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
       
     </div>
 
@@ -350,7 +351,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-18 13:08:28" itemprop="dateModified" datetime="2021-07-18T13:08:28+08:00">2021-07-18</time>
+        <time title="修改时间：2021-07-18 13:21:55" itemprop="dateModified" datetime="2021-07-18T13:21:55+08:00">2021-07-18</time>
       </span>
 
   
@@ -363,7 +364,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>**”Vim is a greatly improved version of the good old UNIX editor Vi.” **</p>
+          <p>“<strong>Vim is a greatly improved version of the good old UNIX editor Vi</strong>.”</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/05/24/learn-vim/#more" rel="contents">
