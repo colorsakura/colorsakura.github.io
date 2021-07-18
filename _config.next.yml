@@ -3,7 +3,7 @@ scheme: Pisces
 menu:
   home: / || fa fa-home
   archives: /archives/ || fa fa-archive
-  apps: /apps/ || fab fa-app-store
+  apps: /apps/ || fas fa-dice-d6
   friends: /friends/ || fa fa-user-friends
   about: /about/ || fa fa-child
 
