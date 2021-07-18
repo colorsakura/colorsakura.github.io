@@ -46,6 +46,6 @@ jobs:
         remote_path: /var/www/52bilibili.com/
         remote_host: 1.14.157.65
         remote_port: 873
-        remote_user: chauncey
+        remote_user: ubuntu
         remote_key: ${{ secrets.DEPLOY_KEY }}
       
