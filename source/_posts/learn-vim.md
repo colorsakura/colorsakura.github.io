@@ -4,9 +4,6 @@ date: 2021-05-25
 tags: ['Vim', 'Doc']
 ---
 
-"**Vim is a greatly improved version of the good old UNIX editor Vi**."
-<!-- more -->
-
 ![learn vim cover](/images/learn-vim.png)
 
 ### VIM 模式
