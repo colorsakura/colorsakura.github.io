@@ -18,6 +18,10 @@ footer:
     # gongan_num: 京公网安备 1234567890号
     # gongan_icon_url: /uploads/beian.png
 
+google_analytics:
+  tracking_id: G-VD8JQMPHR5
+  only_pageview: false
+
 
 darkmode: true
 
