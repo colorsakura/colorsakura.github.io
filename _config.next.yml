@@ -42,7 +42,7 @@ font:
   enable: true
 
 #   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host: https://fonts.google.com/
+  host: https://fonts.googleapis.com
 
 #   # Font options:
 #   # `external: true` will load this font family from `host` above.
