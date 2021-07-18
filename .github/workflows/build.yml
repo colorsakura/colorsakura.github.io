@@ -42,7 +42,7 @@ jobs:
       uses: burnett01/rsync-deployments@4.1
       with:
         switches: -avzr --delete --exclude="" --filter=""
-        path: public/
+        path: docs/
         remote_path: /var/www/52bilibili.com/
         remote_host: 1.14.157.65
         remote_port: 873
