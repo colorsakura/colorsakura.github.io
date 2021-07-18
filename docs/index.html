@@ -205,7 +205,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-07-18 13:58:47" itemprop="dateCreated datePublished" datetime="2021-07-18T13:58:47+08:00">2021-07-18</time>
+      <time title="创建时间：2021-07-18 14:00:59" itemprop="dateCreated datePublished" datetime="2021-07-18T14:00:59+08:00">2021-07-18</time>
     </span>
 
   
@@ -281,7 +281,7 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-07-18 13:58:47" itemprop="dateCreated datePublished" datetime="2021-07-18T13:58:47+08:00">2021-07-18</time>
+      <time title="创建时间：2021-07-18 14:00:59" itemprop="dateCreated datePublished" datetime="2021-07-18T14:00:59+08:00">2021-07-18</time>
     </span>
 
   
@@ -354,7 +354,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-07-18 13:58:47" itemprop="dateModified" datetime="2021-07-18T13:58:47+08:00">2021-07-18</time>
+        <time title="修改时间：2021-07-18 14:00:59" itemprop="dateModified" datetime="2021-07-18T14:00:59+08:00">2021-07-18</time>
       </span>
 
   
@@ -400,10 +400,8 @@
 <p><code>:set hls</code> 设置高亮显示<br><code>*</code>按键将当前光标处的单词高亮显示，使用n浏览下一个查找高亮的结果<br><code>:s/old/new</code>   将当前行的第一个字符串old替换为new<br><code>:s/old/new/g</code>   将当前行的所有字符串old替换为new<br><code>:90s/old/new/g</code>  将指定行的所有字符串old替换为new<br><code>:90,93s/old/new/g</code>  将指定范围的行的所有字符串old替换为new<br><code>:%s/old/new/g</code>   将文本中所有的字符串old替换为new<br><code>:%s/old/new/gc</code>  依次替换每个字符串关键字<br><code>:%s/^struct/int/g</code>   将所有以struct开头的字符串替换为int</p>
 <h3 id="撤销修改、重做与保存"><a href="#撤销修改、重做与保存" class="headerlink" title="撤销修改、重做与保存"></a>撤销修改、重做与保存</h3><p><code>u</code>:  撤销上一步的操作。<br><code>Ctrl+r</code>:  将原来的插销重做一遍<br><code>U</code>：  恢复一整行原来的面貌（文件打开时的文本状态）<br><code>q</code>:  若文件没有修改，直接退出<br><code>q!</code>:  文件已经被修改，放弃修改退出<br><code>wq</code>:  文件已经被修改，保存修改并退出<br><code>e!</code>:  放弃修改，重新回到文件打开时的状态</p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="编辑多个文件"><a href="#编辑多个文件" class="headerlink" title="编辑多个文件"></a>编辑多个文件</h4><p>文件和缓冲区的区别<br>文件是保存在磁盘上的，而打开的文件的文件是在内存中，在内存中有一个缓冲区，用来存放打开的文件。vim每次打开文件时都会创建一个缓冲区，vim支持打开多个文件<br><code>:buffers</code>   查看缓冲区列表==ls<br><code>:buffer N</code>  根据缓冲区列表的编号跳转到指定缓冲区<br><code>:bnext/bprev</code>  遍历缓冲区列表<br><code>:bfirst/blast</code>  分别调到缓冲区列表的开头和结尾<br><code>:write</code>   将缓冲区的修改保存到磁盘上<br><code>:edit! e!</code>  放弃缓冲区的修改，恢复到文件打开时的状态<br><code>:edit file</code>  编辑另一个文件<br><code>:wnext</code>   保存当前缓冲区的修改并跳转到缓冲区列表中的下一个文件<br><code>:set autowrite</code></p>
-<p>标签页与折叠栏</p>
-<p>标签页的新建：<code>tabedit file</code>/<code>tab split</code><br>标签页的切换: <code>tabn</code>/<code>tabp</code><br>按键：<code>gt</code>/<code>gT</code><br>标签页的关闭: <code>tabclose</code><br>关闭当前的标签页: <code>tabonly</code><br>创建一个折叠<br>    <code>zf200G</code>:将光标和200行之间的代码折叠起来<br>折叠的打开与关闭<br>    <code>za</code>:  打开和关闭折叠<br>    <code>zr</code>/<code>zm</code>: 一层一层地打开和关闭折叠<br>    <code>zR</code>/<code>zM</code>: 分别打开和关闭所有的折叠<br>折叠键的光标移动<br>    <code>zj</code>: 跳转到下一个折叠处<br>    <code>zk</code>: 跳转到上一个折叠处<br>删除折叠<br>    <code>zd</code>: 删除光标下的折叠<br>    <code>zD</code>: 删除光标下的折叠以及嵌套的折叠<br>    <code>zE</code>: 删除所有的折叠标签<br>    创建的折叠当退出vim之后就失效了。</p>
-<p>多窗口操作</p>
-<p>分割窗口<br>    <code>split/vsplit filename</code><br>窗口间跳转<br>    <code>ctrl+w hjkl</code><br>    <code>ctrl+w w</code><br>移动窗口<br>    <code>ctrl+w HJKL</code><br>调整窗口尺寸<br>    <code>ctrl+w +/-</code>  调整窗口的高度<br>    <code>ctrl+w &lt;/&gt;</code>  调整窗口的宽度<br>    <code>ctrl+w =</code> 所有的窗口设置相同的尺寸<br>    <code>:resize n</code>将当前窗口尺寸调整为N行<br>关闭窗口<br>    <code>close</code>: 关闭一个窗口<br>    <code>qall</code>: 退出所有窗口<br>   <code> qall!</code>: 放弃修改，退出所有窗口<br>    <code>wqall</code>: 保存并退出所有窗口<br>    <code>wall</code>: 保存所有窗口</p>
+<h4 id="标签页与折叠栏"><a href="#标签页与折叠栏" class="headerlink" title="标签页与折叠栏"></a>标签页与折叠栏</h4><p>标签页的新建：<code>tabedit file</code>/<code>tab split</code><br>标签页的切换: <code>tabn</code>/<code>tabp</code><br>按键：<code>gt</code>/<code>gT</code><br>标签页的关闭: <code>tabclose</code><br>关闭当前的标签页: <code>tabonly</code><br>创建一个折叠<br>    <code>zf200G</code>:将光标和200行之间的代码折叠起来<br>折叠的打开与关闭<br>    <code>za</code>:  打开和关闭折叠<br>    <code>zr</code>/<code>zm</code>: 一层一层地打开和关闭折叠<br>    <code>zR</code>/<code>zM</code>: 分别打开和关闭所有的折叠<br>折叠键的光标移动<br>    <code>zj</code>: 跳转到下一个折叠处<br>    <code>zk</code>: 跳转到上一个折叠处<br>删除折叠<br>    <code>zd</code>: 删除光标下的折叠<br>    <code>zD</code>: 删除光标下的折叠以及嵌套的折叠<br>    <code>zE</code>: 删除所有的折叠标签<br>    创建的折叠当退出vim之后就失效了。</p>
+<h4 id="多窗口操作"><a href="#多窗口操作" class="headerlink" title="多窗口操作"></a>多窗口操作</h4><p>分割窗口<br>    <code>split/vsplit filename</code><br>窗口间跳转<br>    <code>ctrl+w hjkl</code><br>    <code>ctrl+w w</code><br>移动窗口<br>    <code>ctrl+w HJKL</code><br>调整窗口尺寸<br>    <code>ctrl+w +/-</code>  调整窗口的高度<br>    <code>ctrl+w &lt;/&gt;</code>  调整窗口的宽度<br>    <code>ctrl+w =</code> 所有的窗口设置相同的尺寸<br>    <code>:resize n</code>将当前窗口尺寸调整为N行<br>关闭窗口<br>    <code>close</code>: 关闭一个窗口<br>    <code>qall</code>: 退出所有窗口<br>   <code> qall!</code>: 放弃修改，退出所有窗口<br>    <code>wqall</code>: 保存并退出所有窗口<br>    <code>wall</code>: 保存所有窗口</p>
 <hr>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/61515833">知乎-vim命令大全</a></p>
 
