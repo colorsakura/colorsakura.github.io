@@ -37,3 +37,15 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
+
+    - name: Deploy
+      uses: burnett01/rsync-deployments@4.1
+      with:
+        switches: -avzr --delete --exclude="" --filter=""
+        path: public/
+        remote_path: /var/www/52bilibili.com/
+        remote_host: 1.14.157.65
+        remote_port: 873
+        remote_user: chauncey
+        remote_key: ${{ secrets.DEPLOY_KEY }}
+      
