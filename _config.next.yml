@@ -36,13 +36,13 @@ reading_progress:
   color: "#37c6c0"
   height: 2px
 
-# font:
-#   # Use custom fonts families or not.
-#   # Depended options: `external` and `family`.
-#   enable: true
+font:
+  # Use custom fonts families or not.
+  # Depended options: `external` and `family`.
+  enable: true
 
 #   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-#   host:
+  host: https://fonts.google.com/
 
 #   # Font options:
 #   # `external: true` will load this font family from `host` above.
@@ -73,9 +73,9 @@ reading_progress:
 #     family: Montserrat
 
 #   # Font settings for <code> and code blocks.
-#   codes:
-#     external: true
-#     family: PT Mono
+  codes:
+    external: true
+    family: Jetbrains Mono
 
 math:
   # Default (false) will load mathjax / katex script on demand.
