@@ -41,7 +41,7 @@ reading_progress:
   position: top
   reversed: false
   color: "#37c6c0"
-  height: 2px
+  height: 3px
 
 font:
   # Use custom fonts families or not.
