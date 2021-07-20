@@ -2055,7 +2055,7 @@ pre code {
 .reading-progress-bar {
   --progress: 0;
   background: #37c6c0;
-  height: 2px;
+  height: 3px;
   position: fixed;
   z-index: 1500;
   width: var(--progress);
@@ -2362,23 +2362,6 @@ pre code {
   font-weight: normal;
   margin: initial;
   overflow-wrap: break-word;
-}
-.posts-expand .post-title .post-edit-link {
-  border-bottom: 0;
-  color: #bbb;
-  display: inline-block;
-  float: right;
-  font-size: 1.25em;
-  margin-left: -1.2em;
-  transition: color 0.2s ease-in;
-}
-@media (max-width: 567px) {
-  .posts-expand .post-title .post-edit-link {
-    margin-left: initial;
-  }
-}
-.posts-expand .post-title .post-edit-link:hover {
-  color: #fc6423;
 }
 .posts-expand .post-title-link {
   border-bottom: 0;
