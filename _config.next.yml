@@ -28,7 +28,7 @@ darkmode: true
 pjax: true
 
 post_edit:
-  enable: true
+  enable: false
 
 preconnect: true
 mobile_layout_economy: true
