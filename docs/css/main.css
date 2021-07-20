@@ -3074,3 +3074,12 @@ mjx-container[display="true"] + br {
     margin-bottom: 10px;
   }
 }
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+@supports (overflow-x: clip) {
+  body {
+    overflow-x: clip;
+  }
+}
