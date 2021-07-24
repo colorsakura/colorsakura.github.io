@@ -1,6 +1,7 @@
 ---
 title: 应用
 date: 2021-07-17 01:18:42
+type: page
 ---
 
 <div class="link-grid">
