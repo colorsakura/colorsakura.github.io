@@ -8,4 +8,4 @@ type: page
 
 - [x] C
 - [x] Python
-- [] Golang
+- [ ] Golang
