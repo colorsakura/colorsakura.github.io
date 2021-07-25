@@ -1,5 +1,6 @@
 ---
 title: 设置非root账号不用sudo直接执行docker命令
+date: 2018-01-03
 ---
 
 ```bash
