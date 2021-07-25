@@ -82,7 +82,7 @@ font:
 #   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: Jetbrains Mono
+    family: JetBrainsMono, "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", Courier, monospace
 
 math:
   # Default (false) will load mathjax / katex script on demand.
