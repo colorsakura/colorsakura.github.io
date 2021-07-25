@@ -719,7 +719,7 @@ pre {
 }
 pre,
 code {
-  font-family: Jetbrains Mono, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
+  font-family: JetBrainsMono, "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", Courier, monospace, consolas, Menlo, monospace, 'PingFang SC', 'Microsoft YaHei';
 }
 code {
   border-radius: 3px;
