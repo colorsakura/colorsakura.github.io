@@ -6,6 +6,6 @@ type: page
 
 ### 编程语言
 
--[x] C  
--[x] Python  
--[] Golang
+- [x] C
+- [x] Python
+- [] Golang
