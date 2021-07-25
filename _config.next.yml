@@ -74,10 +74,10 @@ font:
 #     family: Amita
 #     size:
 
-#   # Font settings for posts (.post-body).
-#   posts:
-#     external: true
-#     family: Montserrat
+  # Font settings for posts (.post-body).
+  posts:
+    external: true
+    family: Roboto, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Noto Sans CJK", sans-serif
 
 #   # Font settings for <code> and code blocks.
   codes:
