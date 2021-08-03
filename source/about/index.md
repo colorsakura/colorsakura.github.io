@@ -6,6 +6,14 @@ type: page
 
 ### 编程语言
 
-- [x] C
-- [x] Python
-- [ ] Golang
+[x] C
+[x] Python
+[ ] Golang
+
+### 软件学习
+
+[ ] PhotoShop
+[ ] Figma
+[x] Office三件套
+[x] Xmind
+
