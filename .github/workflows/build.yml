@@ -41,7 +41,7 @@ jobs:
           branch: ${{ github.ref }}
 
       - name: "Rsync Deploy"
-        uses: burnett01/rsync-deployments@4.1
+        uses: burnett01/rsync-deployments@5.0
         with:
           switches: -avzr --delete --exclude="" --filter=""
           path: docs/
