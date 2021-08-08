@@ -26,8 +26,9 @@ darkmode: true
 
 pjax: true
 
-post_edit:
-  enable: false
+auto_excerpt:
+  enable: true
+  length: 150
 
 preconnect: true
 mobile_layout_economy: true
