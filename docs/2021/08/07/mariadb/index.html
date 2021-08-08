@@ -20,26 +20,30 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"52bilibili.com","root":"/","images":"/images","scheme":"Pisces","version":"8.7.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Your Dream, I Display">
-<meta property="og:type" content="website">
-<meta property="og:title" content="52Bilibili">
-<meta property="og:url" content="https://52bilibili.com/tags/%E8%9C%A1%E7%83%9B%E5%9B%BE/index.html">
+<meta name="description" content="MariaDB 背景　　MariaDB 是 MySQL 关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在 GNU GPL 下开源。MariaDB 的开发是由 MySQL 的一些原始开发者领导的，他们担心甲骨文公司收购 MySQL 后会有一些隐患。 　　MariaDB 打算保持与 MySQL 的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与 MySQL API 和命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MariaDB安装配置">
+<meta property="og:url" content="https://52bilibili.com/2021/08/07/mariadb/index.html">
 <meta property="og:site_name" content="52Bilibili">
-<meta property="og:description" content="Your Dream, I Display">
+<meta property="og:description" content="MariaDB 背景　　MariaDB 是 MySQL 关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在 GNU GPL 下开源。MariaDB 的开发是由 MySQL 的一些原始开发者领导的，他们担心甲骨文公司收购 MySQL 后会有一些隐患。 　　MariaDB 打算保持与 MySQL 的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与 MySQL API 和命令">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-08T04:41:13.618Z">
 <meta property="article:author" content="ヘンタイ绅士">
-<meta property="article:tag" content="52bilibili, python, c, golang, 动漫, 分享, 科技, 树莓派, raspberry, linux, debian, ubuntu, 英语, 日语, Anki, notion, 计算机, 数据分析, spotfire, excel, 哔哩哔哩, 漫画, 小说">
+<meta property="article:tag" content="MariaDB">
+<meta property="article:tag" content="Navicat">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://52bilibili.com/tags/%E8%9C%A1%E7%83%9B%E5%9B%BE/">
+<link rel="canonical" href="https://52bilibili.com/2021/08/07/mariadb/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/蜡烛图/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://52bilibili.com/2021/08/07/mariadb/","path":"2021/08/07/mariadb/","title":"MariaDB安装配置"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 蜡烛图 | 52Bilibili</title>
+<title>MariaDB安装配置 | 52Bilibili</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VD8JQMPHR5"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-VD8JQMPHR5","only_pageview":false}</script>
@@ -109,7 +113,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -122,6 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">MariaDB 背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MariaDB-%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">MariaDB 安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9B%BE%E5%BD%A2%E8%BD%AF%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">数据库图形软件</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -171,50 +176,117 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">蜡烛图
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://52bilibili.com/2021/08/07/mariadb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ヘンタイ绅士">
+      <meta itemprop="description" content="Your Dream, I Display">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="52Bilibili">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MariaDB安装配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="创建时间：2021-08-08 00:00:00 / 修改时间：12:41:13" itemprop="dateCreated datePublished" datetime="2021-08-08T00:00:00+08:00">2021-08-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="MariaDB-背景"><a href="#MariaDB-背景" class="headerlink" title="MariaDB 背景"></a>MariaDB 背景</h3><p>　　MariaDB 是 MySQL 关系数据库管理系统的一个复刻，由社区开发，有商业支持，旨在继续保持在 GNU GPL 下开源。MariaDB 的开发是由 MySQL 的一些原始开发者领导的，他们担心甲骨文公司收购 MySQL 后会有一些隐患。</p>
+<p>　　MariaDB 打算保持与 MySQL 的高度兼容性，确保具有库二进制奇偶校验的直接替换功能，以及与 MySQL API 和命令的精确匹配。MariaDB 自带了一个新的存储引擎 Aria，它可以替代 MyISAM，成为默认的事务和非事务引擎。它最初使用 XtraDB 作为默认存储引擎，并从10.2版本切换回 InnoDB。</p>
+<p>　　它的首席开发人员是米卡埃尔·维德纽斯，他是 MySQL AB 的创始人之一，也是 Monty Program AB 的创始人。2008年1月16日，MySQL AB 宣布它已经同意被 Sun 微系统集团以大约10亿美元的价格收购。该项收购已于2008年2月26日完成。MariaDB 是以 Monty 的小女儿 Maria 命名的，就像 MySQL 是以他另一个女儿 My 命名的一样。</p>
+<h3 id="MariaDB-安装配置"><a href="#MariaDB-安装配置" class="headerlink" title="MariaDB 安装配置"></a>MariaDB 安装配置</h3><ul>
+<li>Linux：<br>默认使用发行版的版本就行了。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> mariadb-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>初始化 MariaDB：</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> mysql_secure_installation<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后根据提示完成相应的设置即可。</p>
+<ul>
+<li>开启远程访问：</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> mysql -u root -p
+<span class="token comment"># 输入密码进入数据库</span>
+grant all privileges on *.* to <span class="token string">'root'</span>@<span class="token string">'%'</span> identified by <span class="token string">'password'</span><span class="token punctuation">;</span> <span class="token comment"># % 为允许所有ip访问 password 替换成设置的密码</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>修改 MariaDB 配置文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">vim</span> /etc/mysql/mariadb.conf.d/50-server.cnf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>注释掉<code>bind-address=127.0.0.1</code><br>重启服务</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart mariadb.service<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="数据库图形软件"><a href="#数据库图形软件" class="headerlink" title="数据库图形软件"></a>数据库图形软件</h3><p>强烈推荐使用 <a target="_blank" rel="noopener" href="https://www.navicat.com.cn/">Navicat</a>。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-07-24T00:00:00+08:00"
-              content="2021-07-24">
-          07-24
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/23/K%E7%BA%BF%E5%9B%BE%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">K 线图基础知识</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MariaDB/" rel="tag"># MariaDB</a>
+              <a href="/tags/Navicat/" rel="tag"># Navicat</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/07/23/K%E7%BA%BF%E5%9B%BE%E5%AD%A6%E4%B9%A0/" rel="prev" title="K 线图基础知识">
+                  <i class="fa fa-chevron-left"></i> K 线图基础知识
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
+
 
 </div>
   </main>
