@@ -28,7 +28,7 @@ pjax: true
 
 auto_excerpt:
   enable: true
-  length: 150
+  length: 80
 
 preconnect: true
 mobile_layout_economy: true
