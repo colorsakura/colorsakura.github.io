@@ -5,6 +5,7 @@ menu:
   archives: /archives/ || fa fa-archive
   tags: /tags/ || fas fa-tags
   apps: /apps/ || fas fa-dice-d6
+  todo: /todo/ || far fa-list-alt
   friends: /friends/ || fa fa-user-friends
   about: /about/ || fa fa-child
 
