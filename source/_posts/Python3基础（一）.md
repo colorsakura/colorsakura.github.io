@@ -28,6 +28,15 @@ PS：`不要将Python关键字和函数名用作变量名，即不要使用Pytho
 
 ### 类型
 
-| Type | Feature |
-| ---- | ------- |
-| int | pass |
+| Type    | Feature            |
+| ------- | ------------------ |
+| Numbers | Integers && Floats |
+
+#### 字符串(Strings)
+
+```python
+msg = "Hello World!"
+print(msg)
+```
+
+像这样就可以创建一个字符串变量，字符串一般用双引号`""`或者单引号`''`包裹着。

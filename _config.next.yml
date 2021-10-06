@@ -84,6 +84,7 @@ font:
   codes:
     external: true
     family: JetBrainsMono, "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", Courier, monospace
+    size: 0.8
 
 math:
   # Default (false) will load mathjax / katex script on demand.
