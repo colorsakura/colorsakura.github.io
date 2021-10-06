@@ -92,12 +92,13 @@ font:
   posts:
     external: true
     family: Roboto, Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Noto Sans CJK", sans-serif
+    size: 0.8
 
   #   # Font settings for <code> and code blocks.
   codes:
     external: true
     family: JetBrainsMono, "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", Courier, monospace
-    size: 0.8
+    size: 0.64
 
 math:
   # Default (false) will load mathjax / katex script on demand.
