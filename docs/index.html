@@ -136,13 +136,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -172,6 +172,86 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://52bilibili.com/2021/10/16/Debain%E5%BC%80%E5%90%AFBBR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ヘンタイ绅士">
+      <meta itemprop="description" content="You Dream, We Display">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="52Bilibili">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/16/Debain%E5%BC%80%E5%90%AFBBR/" class="post-title-link" itemprop="url">Debian 开启BBR</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-10-17 00:00:00 / 修改时间：12:58:51" itemprop="dateCreated datePublished" datetime="2021-10-17T00:00:00+08:00">2021-10-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>由于 Debian10 默认的内核就是 4.19 版本的内核而且编译了 TCP BBR 模块，所以可以直接通过参数开启。</p>
+<p>新的 TCP 拥塞控制算法 BBR (Bottleneck Bandwidth and RTT) 可以让服务器的带宽尽量跑满，并且尽量不要有排队的情况，让网络服务更佳稳定和高效。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 修改系统变量</span>
+<span class="token builtin class-name">echo</span> net.core.default_qdisc<span class="token operator">=</span>fq <span class="token operator">>></span> /etc/sysctl.conf
+<span class="token builtin class-name">echo</span> net.ipv4.tcp_congestion_control<span class="token operator">=</span>bbr <span class="token operator">>></span> /etc/sysctl.conf
+
+<span class="token comment"># 保存生效</span>
+sysctl -p
+
+<span class="token comment"># 执行</span>
+sysctl net.ipv4.tcp_available_congestion_control
+<span class="token comment"># 显示结果</span>
+<span class="token comment"># net.ipv4.tcp_available_congestion_control = reno cubic bbr</span>
+
+<span class="token comment"># 检测</span>
+lsmod <span class="token operator">|</span> <span class="token function">grep</span> bbr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -212,7 +292,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-10 19:59:35" itemprop="dateModified" datetime="2021-10-10T19:59:35+08:00">2021-10-10</time>
+        <time title="修改时间：2021-10-17 12:58:51" itemprop="dateModified" datetime="2021-10-17T12:58:51+08:00">2021-10-17</time>
       </span>
 
   
@@ -307,7 +387,7 @@ value <span class="token operator">=</span> <span class="token number">1.1</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-10 19:59:35" itemprop="dateModified" datetime="2021-10-10T19:59:35+08:00">2021-10-10</time>
+        <time title="修改时间：2021-10-17 12:58:51" itemprop="dateModified" datetime="2021-10-17T12:58:51+08:00">2021-10-17</time>
       </span>
 
   
@@ -391,7 +471,7 @@ value <span class="token operator">=</span> <span class="token number">1.1</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-10 19:59:35" itemprop="dateModified" datetime="2021-10-10T19:59:35+08:00">2021-10-10</time>
+        <time title="修改时间：2021-10-17 12:58:51" itemprop="dateModified" datetime="2021-10-17T12:58:51+08:00">2021-10-17</time>
       </span>
 
   
@@ -461,7 +541,7 @@ value <span class="token operator">=</span> <span class="token number">1.1</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-10 19:59:35" itemprop="dateModified" datetime="2021-10-10T19:59:35+08:00">2021-10-10</time>
+        <time title="修改时间：2021-10-17 12:58:51" itemprop="dateModified" datetime="2021-10-17T12:58:51+08:00">2021-10-17</time>
       </span>
 
   
@@ -560,7 +640,7 @@ flush privileges<span class="token punctuation">;</span><span aria-hidden="true"
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-10 19:59:35" itemprop="dateModified" datetime="2021-10-10T19:59:35+08:00">2021-10-10</time>
+        <time title="修改时间：2021-10-17 12:58:51" itemprop="dateModified" datetime="2021-10-17T12:58:51+08:00">2021-10-17</time>
       </span>
 
   
@@ -601,76 +681,6 @@ flush privileges<span class="token punctuation">;</span><span aria-hidden="true"
 <p>11．”一”图形<br>　　此较形不常见，即开盘价、收盘价、最高价、最低价在同一价位。只出现于交易非常冷清，全日交易只有一档价位成交。冷门股此类情形较易发生。</p>
 <h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a target="_blank" rel="noopener" href="https://wiki.mbalib.com/wiki/K%E7%BA%BF%E7%90%86%E8%AE%BA">MBA 智库-K 线理论</a></p>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://52bilibili.com/2021/07/23/%E4%BA%BA%E7%89%A9%E4%BC%A0-%E6%A2%85%E8%A5%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ヘンタイ绅士">
-      <meta itemprop="description" content="You Dream, We Display">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="52Bilibili">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/23/%E4%BA%BA%E7%89%A9%E4%BC%A0-%E6%A2%85%E8%A5%BF/" class="post-title-link" itemprop="url">犬人梅西</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-07-24 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-24T00:00:00+08:00">2021-07-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-10 19:59:35" itemprop="dateModified" datetime="2021-10-10T19:59:35+08:00">2021-10-10</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <iframe src="//player.bilibili.com/player.html?aid=4904567&bvid=BV1ws411q7cg&cid=7964529&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
       
     </div>
 
