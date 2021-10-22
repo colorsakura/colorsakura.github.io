@@ -123,10 +123,10 @@ note:
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
   style: modern
-  icons: false
+  icons: true
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
-  light_bg_offset: 0
+  light_bg_offset: -18
 
 custom_file_path:
   head: source/_data/head.njk
@@ -139,12 +139,3 @@ custom_file_path:
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
-
-vendors:
-  # The CDN provider of NexT internal scripts.
-  # Available values: local | jsdelivr | unpkg | cdnjs
-  internal: local
-  # The default CDN provider of third-party plugins.
-  # Available values: local | jsdelivr | unpkg | cdnjs
-  # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-  plugins: local
