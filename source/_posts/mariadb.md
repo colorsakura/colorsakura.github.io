@@ -1,5 +1,5 @@
 ---
-title: "MariaDB安装配置"
+title: "MariaDB 安装配置"
 date: 2021-08-08
 tags: ['MariaDB', 'Navicat', '数据库']
 ---
