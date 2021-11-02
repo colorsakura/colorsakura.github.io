@@ -22,6 +22,7 @@
   --highlight-foreground: #444;
   --highlight-gutter-background: #dedede;
   --highlight-gutter-foreground: #555;
+  color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -48,12 +49,16 @@
     --highlight-foreground: #c5c8c6;
     --highlight-gutter-background: #2d2f31;
     --highlight-gutter-foreground: #b4b7b5;
+    color-scheme: dark;
   }
   img {
     opacity: 0.75;
   }
   img:hover {
     opacity: 0.9;
+  }
+  iframe {
+    color-scheme: light;
   }
 }
 html {
@@ -2464,7 +2469,6 @@ pre code {
 }
 .posts-expand .post-meta-container time {
   border-bottom: 1px dashed #999;
-  cursor: pointer;
 }
 .post-meta {
   display: flex;
