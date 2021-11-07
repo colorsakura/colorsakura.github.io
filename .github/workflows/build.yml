@@ -24,29 +24,29 @@ jobs:
       - name: Generate
         run: hexo clean && hexo generate
 
-      - name: Commit
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git pull
-          git add .
-          git diff --quiet && git diff --staged --quiet || git commit -am 'auto commit'
-          echo ::set-output name=status::success
+#       - name: Commit
+#         run: |
+#           git config --local user.email "action@github.com"
+#           git config --local user.name "GitHub Action"
+#           git pull
+#           git add .
+#           git diff --quiet && git diff --staged --quiet || git commit -am 'auto commit'
+#           echo ::set-output name=status::success
 
-      - name: "GitHub Push"
-        if: steps.commit.output.status != 'success'
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+#       - name: "GitHub Push"
+#         if: steps.commit.output.status != 'success'
+#         uses: ad-m/github-push-action@v0.6.0
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+#           branch: ${{ github.ref }}
 
-      - name: "Rsync Deploy"
-        uses: burnett01/rsync-deployments@5.1
-        with:
-          switches: -avzr --delete --exclude="" --filter=""
-          path: docs/
-          remote_path: /var/www/52bilibili.com/
-          remote_host: ${{ secrets.REMOTE_HOST }}
-          remote_port: 22
-          remote_user: ${{ secrets.REMOTE_USER }}
-          remote_key: ${{ secrets.DEPLOY_KEY }}
+#       - name: "Rsync Deploy"
+#         uses: burnett01/rsync-deployments@5.1
+#         with:
+#           switches: -avzr --delete --exclude="" --filter=""
+#           path: docs/
+#           remote_path: /var/www/52bilibili.com/
+#           remote_host: ${{ secrets.REMOTE_HOST }}
+#           remote_port: 22
+#           remote_user: ${{ secrets.REMOTE_USER }}
+#           remote_key: ${{ secrets.DEPLOY_KEY }}
