@@ -6,14 +6,14 @@
 title: 52Bilibili
 subtitle: ""
 description: "You Dream, We Display"
-keywords: 52bilibili, python, c, golang, 动漫, 分享, 科技, 树莓派, raspberry, linux, debian, ubuntu, 英语, 日语, Anki, notion, 计算机, 数据分析, spotfire, excel, 哔哩哔哩, 漫画, 小说
+keywords: blog, 52bilibili, python, c, golang, 动漫, 分享, 科技, 树莓派, raspberry, linux, debian, ubuntu, 英语, 日语, Anki, notion, 计算机, 数据分析, spotfire, excel, 哔哩哔哩, 漫画, 小说
 author: "ヘンタイ绅士"
 language: zh-CN
 timezone: "Asia/Shanghai"
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://52bilibili.com
+url: https://blog.52bilibili.com
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
