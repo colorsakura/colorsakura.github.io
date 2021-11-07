@@ -213,7 +213,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-02 22:17:26" itemprop="dateModified" datetime="2021-11-02T22:17:26+08:00">2021-11-02</time>
+        <time title="修改时间：2021-11-07 16:03:54" itemprop="dateModified" datetime="2021-11-07T16:03:54+08:00">2021-11-07</time>
       </span>
 
   
@@ -228,20 +228,20 @@
     <div class="post-body" itemprop="articleBody">
           <p>由于 Debian10 默认的内核就是 4.19 版本的内核而且编译了 TCP BBR 模块，所以可以直接通过参数开启。</p>
 <p>新的 TCP 拥塞控制算法 BBR (Bottleneck Bandwidth and RTT) 可以让服务器的带宽尽量跑满，并且尽量不要有排队的情况，让网络服务更佳稳定和高效。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"># 修改系统变量
-echo net.core.default_qdisc&#x3D;fq &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
-echo net.ipv4.tcp_congestion_control&#x3D;bbr &gt;&gt; &#x2F;etc&#x2F;sysctl.conf
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token comment"># 修改系统变量</span>
+<span class="token builtin class-name">echo</span> net.core.default_qdisc<span class="token operator">=</span>fq <span class="token operator">>></span> /etc/sysctl.conf
+<span class="token builtin class-name">echo</span> net.ipv4.tcp_congestion_control<span class="token operator">=</span>bbr <span class="token operator">>></span> /etc/sysctl.conf
 
-# 保存生效
+<span class="token comment"># 保存生效</span>
 sysctl -p
 
-# 执行
+<span class="token comment"># 执行</span>
 sysctl net.ipv4.tcp_available_congestion_control
-# 显示结果
-# net.ipv4.tcp_available_congestion_control &#x3D; reno cubic bbr
+<span class="token comment"># 显示结果</span>
+<span class="token comment"># net.ipv4.tcp_available_congestion_control = reno cubic bbr</span>
 
-# 检测
-lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 检测</span>
+lsmod <span class="token operator">|</span> <span class="token function">grep</span> bbr<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
     </div>
@@ -299,7 +299,7 @@ lsmod | grep bbr<span aria-hidden="true" class="line-numbers-rows"><span></span>
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-02 22:17:26" itemprop="dateModified" datetime="2021-11-02T22:17:26+08:00">2021-11-02</time>
+        <time title="修改时间：2021-11-07 16:03:54" itemprop="dateModified" datetime="2021-11-07T16:03:54+08:00">2021-11-07</time>
       </span>
 
   
@@ -383,7 +383,7 @@ trackers <span class="token operator">=</span> r<span class="token punctuation">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-02 22:17:26" itemprop="dateModified" datetime="2021-11-02T22:17:26+08:00">2021-11-02</time>
+        <time title="修改时间：2021-11-07 16:03:54" itemprop="dateModified" datetime="2021-11-07T16:03:54+08:00">2021-11-07</time>
       </span>
 
   
@@ -462,7 +462,7 @@ trackers <span class="token operator">=</span> r<span class="token punctuation">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-02 22:17:26" itemprop="dateModified" datetime="2021-11-02T22:17:26+08:00">2021-11-02</time>
+        <time title="修改时间：2021-11-07 16:03:54" itemprop="dateModified" datetime="2021-11-07T16:03:54+08:00">2021-11-07</time>
       </span>
 
   
@@ -557,7 +557,7 @@ value <span class="token operator">=</span> <span class="token number">1.1</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-02 22:17:26" itemprop="dateModified" datetime="2021-11-02T22:17:26+08:00">2021-11-02</time>
+        <time title="修改时间：2021-11-07 16:03:54" itemprop="dateModified" datetime="2021-11-07T16:03:54+08:00">2021-11-07</time>
       </span>
 
   
@@ -641,7 +641,7 @@ value <span class="token operator">=</span> <span class="token number">1.1</span
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-02 22:17:26" itemprop="dateModified" datetime="2021-11-02T22:17:26+08:00">2021-11-02</time>
+        <time title="修改时间：2021-11-07 16:03:54" itemprop="dateModified" datetime="2021-11-07T16:03:54+08:00">2021-11-07</time>
       </span>
 
   
