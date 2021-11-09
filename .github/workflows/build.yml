@@ -24,14 +24,14 @@ jobs:
       - name: Generate
         run: hexo clean && hexo generate
 
-#       - name: Commit
-#         run: |
-#           git config --local user.email "action@github.com"
-#           git config --local user.name "GitHub Action"
-#           git pull
-#           git add .
-#           git diff --quiet && git diff --staged --quiet || git commit -am 'auto commit'
-#           echo ::set-output name=status::success
+      - name: Commit
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -am 'auto commit'
+          echo ::set-output name=status::success
 
 #       - name: "GitHub Push"
 #         if: steps.commit.output.status != 'success'
