@@ -6,6 +6,8 @@ tags: ["Linux", "Debian", "Debian11", "Notes", "NAS", "qBittorrent", "BT", "Shel
 
 ### 脚本内容
 
+废弃
+
 ```python
 #!/usr/bin/env python3
 import requests as r
