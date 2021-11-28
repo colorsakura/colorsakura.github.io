@@ -21,26 +21,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.52bilibili.com","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="You Dream, We Display">
-<meta property="og:type" content="website">
-<meta property="og:title" content="52Bilibili">
-<meta property="og:url" content="https://blog.52bilibili.com/archives/2021/07/index.html">
+<meta name="description" content="概述最近组装了一台自用 NAS，双网卡。一个 2.5G 有线，一个千兆 WIFI。系统使用 Debian11，有线连接笔记本，搭建局域网，WIFI 连接路由器的，使用外网。 问题使用 Debian11 时，由于网络布局问题，NAS 无法直接路由器。本地安装 Debian11 时，确实网络教程中使用的配置工具。且感觉 Linux 的网络管理工具很多，有些会冲突只能使用其中之一。由于后期使用 cock">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Debian 双网卡配置">
+<meta property="og:url" content="https://blog.52bilibili.com/2021/11/27/Debian%20%E5%8F%8C%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="52Bilibili">
-<meta property="og:description" content="You Dream, We Display">
+<meta property="og:description" content="概述最近组装了一台自用 NAS，双网卡。一个 2.5G 有线，一个千兆 WIFI。系统使用 Debian11，有线连接笔记本，搭建局域网，WIFI 连接路由器的，使用外网。 问题使用 Debian11 时，由于网络布局问题，NAS 无法直接路由器。本地安装 Debian11 时，确实网络教程中使用的配置工具。且感觉 Linux 的网络管理工具很多，有些会冲突只能使用其中之一。由于后期使用 cock">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-28T12:26:43.487Z">
 <meta property="article:author" content="ヘンタイ绅士">
-<meta property="article:tag" content="blog, 52bilibili, python, c, golang, 动漫, 分享, 科技, 树莓派, raspberry, linux, debian, ubuntu, 英语, 日语, Anki, notion, 计算机, 数据分析, spotfire, excel, 哔哩哔哩, 漫画, 小说">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Debian">
+<meta property="article:tag" content="Debian11">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="Network">
+<meta property="article:tag" content="NetworkManager">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://blog.52bilibili.com/archives/2021/07/">
+<link rel="canonical" href="https://blog.52bilibili.com/2021/11/27/Debian%20%E5%8F%8C%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2021/07/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.52bilibili.com/2021/11/27/Debian%20%E5%8F%8C%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/","path":"2021/11/27/Debian 双网卡配置/","title":"Debian 双网卡配置"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | 52Bilibili</title>
+<title>Debian 双网卡配置 | 52Bilibili</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VD8JQMPHR5"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-VD8JQMPHR5","only_pageview":false}</script>
@@ -111,7 +118,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -124,6 +131,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">操作记录</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -171,69 +179,111 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 15 篇日志。 继续努力。</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.52bilibili.com/2021/11/27/Debian%20%E5%8F%8C%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ヘンタイ绅士">
+      <meta itemprop="description" content="You Dream, We Display">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="52Bilibili">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Debian 双网卡配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="创建时间：2021-11-28 00:00:00 / 修改时间：20:26:43" itemprop="dateCreated datePublished" datetime="2021-11-28T00:00:00+08:00">2021-11-28</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>最近组装了一台自用 NAS，双网卡。一个 2.5G 有线，一个千兆 WIFI。系统使用 Debian11，有线连接笔记本，搭建局域网，WIFI 连接路由器的，使用外网。</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>使用 Debian11 时，由于网络布局问题，NAS 无法直接路由器。本地安装 Debian11 时，确实网络教程中使用的配置工具。且感觉 Linux 的网络管理工具很多，有些会冲突只能使用其中之一。由于后期使用 cockpit 管理 NAS，所以最好选择使用 NetworkManager 管理网络。</p>
+<h3 id="操作记录"><a href="#操作记录" class="headerlink" title="操作记录"></a>操作记录</h3><ol>
+<li><p>安装 Debian11，后续写安装教程。</p>
+</li>
+<li><p>官网下载相对于的 WIFI 网卡驱动包。使用 U 盘安装。</p>
+</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 挂载U盘</span>
+<span class="token function">mkdir</span> /mnt/usb <span class="token comment"># 创建挂载位置</span>
+<span class="token function">fdisk</span> -l <span class="token comment"># 查看U盘路径</span>
+<span class="token function">mount</span> /dev/sdb /mnt/usb <span class="token comment"># 不要弄错了</span>
+dpkg -i package-name <span class="token comment"># 记得进入相应路径</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>请全程使用 root 用户安装。</p>
+</blockquote>
+<ol start="3">
+<li>配置WIFI。</li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-07-24T00:00:00+08:00"
-              content="2021-07-24">
-          07-24
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/23/K%E7%BA%BF%E5%9B%BE%E5%AD%A6%E4%B9%A0/" itemprop="url">
-            <span itemprop="name">K 线图基础知识</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Debian/" rel="tag"># Debian</a>
+              <a href="/tags/Debian11/" rel="tag"># Debian11</a>
+              <a href="/tags/Notes/" rel="tag"># Notes</a>
+              <a href="/tags/Network/" rel="tag"># Network</a>
+              <a href="/tags/NetworkManager/" rel="tag"># NetworkManager</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/24/Debian%E4%BD%BF%E7%94%A8%E4%B9%A0%E6%83%AF/" rel="prev" title="Debian 个人使用习惯">
+                  <i class="fa fa-chevron-left"></i> Debian 个人使用习惯
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-07-24T00:00:00+08:00"
-              content="2021-07-24">
-          07-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/23/%E4%BA%BA%E7%89%A9%E4%BC%A0-%E6%A2%85%E8%A5%BF/" itemprop="url">
-            <span itemprop="name">犬人梅西</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
