@@ -18,8 +18,25 @@ tags: ["HTML5", "Notes"]
 | `<figure>`     |     |
 | `<figcaption>` |     |
 | `<div>`        |     |
+| `<span>`       |     |
 
 ### 内容语义标签
+
+`<p>`
+`<h1>~<h6>`
+`<time>`
+`<form>`
+`<input>`
+`<textarea>`
+`<button>`
+`<ul>`
+`<ol>`
+`<li>`
+`<img>`
+`<audio>`
+`<video>`
+`<a>`
+`<link>`
 
 ### 全局属性
 
@@ -29,7 +46,7 @@ tags: ["HTML5", "Notes"]
 | class              | 规定元素的类名（classname）                                |
 | contenteditableNew | 规定是否可编辑元素的内容。                                 |
 | contextmenuNew     | 指定一个元素的上下文菜单。当用户右击该元素，出现上下文菜单 |
-| data               | -\*New 用于存储页面的自定义数据                            |
+| data               | 用于存储页面的自定义数据                                   |
 | dir                | 设置元素中内容的文本方向。                                 |
 | draggableNew       | 指定某个元素是否可以拖动                                   |
 | dropzoneNew        | 指定是否将数据复制，移动，或链接，或删除                   |
