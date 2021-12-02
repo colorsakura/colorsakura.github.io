@@ -136,13 +136,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">35</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -172,6 +172,126 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.52bilibili.com/2021/12/01/SCP%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ヘンタイ绅士">
+      <meta itemprop="description" content="You Dream, We Display">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="52Bilibili">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/12/01/SCP%20%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">SCP 基础知识</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-12-02 00:00:00 / 修改时间：22:38:36" itemprop="dateCreated datePublished" datetime="2021-12-02T00:00:00+08:00">2021-12-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>SCP 是 SSH 提供的一个客户端程序，用来在两台主机之间加密传送文件（即复制文件）。<br><code>scp</code> 是 secure copy 的缩写，相当于 <code>cp</code> 命令 + SSH。它的底层是 SSH 协议，默认端口是 22，相当于先使用 ssh 命令登录远程主机，然后再执行拷贝操作。<br>scp 主要用于以下三种复制操作。</p>
+<ol>
+<li><p>本地复制到远程。</p>
+</li>
+<li><p>远程复制到本地。</p>
+</li>
+<li><p>两个远程系统之间的复制。</p>
+</li>
+</ol>
+<p>使用 <code>scp</code> 传输数据时，文件和密码都是加密的，不会泄漏敏感信息。</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p><code>scp</code> 的语法类似 <code>cp</code> 的语法。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> <span class="token builtin class-name">source</span> destination<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>上面命令中，<em>source</em> 是文件当前的位置，<em>destination</em> 是文件所要复制到的位置。它们都可以包含用户名和主机名。</p>
+<ul>
+<li>本地文件复制到远程:</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 语法</span>
+<span class="token function">scp</span> SourceFile user@host:directory/TargetFile
+
+<span class="token comment"># 示例</span>
+<span class="token function">scp</span> file.txt remote_username@10.10.0.2:/remote/directory
+
+<span class="token comment"># 将本机的 documents 目录拷贝到远程主机，</span>
+<span class="token comment"># 会在远程主机创建 documents 目录</span>
+<span class="token function">scp</span> -r documents username@server_ip:/path_to_remote_directory
+
+<span class="token comment"># 将本机整个目录拷贝到远程目录下</span>
+<span class="token function">scp</span> -r localmachine/path_to_the_directory username@server_ip:/path_to_remote_directory/
+
+<span class="token comment"># 将本机目录下的所有内容拷贝到远程目录下</span>
+<span class="token function">scp</span> -r localmachine/path_to_the_directory/* username@server_ip:/path_to_remote_directory/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>远程文件复制到本地:</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 语法</span>
+<span class="token function">scp</span> user@host:directory/SourceFile TargetFile
+
+<span class="token comment"># 示例</span>
+<span class="token function">scp</span> remote_username@10.10.0.2:/remote/file.txt /local/directory
+
+<span class="token comment"># 拷贝一个远程目录到本机目录下</span>
+<span class="token function">scp</span> -r username@server_ip:/path_to_remote_directory local-machine/path_to_the_directory/
+
+<span class="token comment"># 拷贝远程目录下的所有内容，到本机目录下</span>
+<span class="token function">scp</span> -r username@server_ip:/path_to_remote_directory/* local-machine/path_to_the_directory/
+<span class="token function">scp</span> -r user@host:directory/SourceFolder TargetFolder<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>两个远程系统之间的复制:</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 语法</span>
+<span class="token function">scp</span> user@host1:directory/SourceFile user@host2:directory/SourceFile
+
+<span class="token comment"># 示例</span>
+<span class="token function">scp</span> user1@host1.com:/files/file.txt user2@host2.com:/files<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -212,7 +332,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-01 21:55:31" itemprop="dateModified" datetime="2021-12-01T21:55:31+08:00">2021-12-01</time>
+        <time title="修改时间：2021-12-02 22:38:36" itemprop="dateModified" datetime="2021-12-02T22:38:36+08:00">2021-12-02</time>
       </span>
 
   
@@ -302,7 +422,7 @@ dpkg -i package-name <span class="token comment"># 记得进入相应路径</spa
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-01 21:55:31" itemprop="dateModified" datetime="2021-12-01T21:55:31+08:00">2021-12-01</time>
+        <time title="修改时间：2021-12-02 22:38:36" itemprop="dateModified" datetime="2021-12-02T22:38:36+08:00">2021-12-02</time>
       </span>
 
   
@@ -472,7 +592,7 @@ dpkg -i package-name <span class="token comment"># 记得进入相应路径</spa
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-01 21:55:31" itemprop="dateModified" datetime="2021-12-01T21:55:31+08:00">2021-12-01</time>
+        <time title="修改时间：2021-12-02 22:38:36" itemprop="dateModified" datetime="2021-12-02T22:38:36+08:00">2021-12-02</time>
       </span>
 
   
@@ -667,7 +787,7 @@ dpkg -i package-name <span class="token comment"># 记得进入相应路径</spa
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-01 21:55:31" itemprop="dateModified" datetime="2021-12-01T21:55:31+08:00">2021-12-01</time>
+        <time title="修改时间：2021-12-02 22:38:36" itemprop="dateModified" datetime="2021-12-02T22:38:36+08:00">2021-12-02</time>
       </span>
 
   
@@ -753,7 +873,7 @@ lsmod <span class="token operator">|</span> <span class="token function">grep</s
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-01 21:55:31" itemprop="dateModified" datetime="2021-12-01T21:55:31+08:00">2021-12-01</time>
+        <time title="修改时间：2021-12-02 22:38:36" itemprop="dateModified" datetime="2021-12-02T22:38:36+08:00">2021-12-02</time>
       </span>
 
   
@@ -782,92 +902,6 @@ trackers <span class="token operator">=</span> r<span class="token punctuation">
     p <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"Bittorrent\TrackersList="</span><span class="token punctuation">)</span>
     f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>c<span class="token punctuation">[</span><span class="token punctuation">:</span>p<span class="token punctuation">]</span> <span class="token operator">+</span> trackers <span class="token operator">+</span>c<span class="token punctuation">[</span>p<span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.52bilibili.com/2021/10/01/Debian%20%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ヘンタイ绅士">
-      <meta itemprop="description" content="You Dream, We Display">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="52Bilibili">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/01/Debian%20%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">Debian 基础篇(一)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-02 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-02T00:00:00+08:00">2021-10-02</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-12-01 21:55:31" itemprop="dateModified" datetime="2021-12-01T21:55:31+08:00">2021-12-01</time>
-      </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="时间-amp-amp-时区-amp-amp-语言"><a href="#时间-amp-amp-时区-amp-amp-语言" class="headerlink" title="时间&amp;&amp;时区&amp;&amp;语言"></a>时间&amp;&amp;时区&amp;&amp;语言</h3><p>timedatectl是一个命令行工具，它允许你查看并且修改系统时间和日期。它在所有现代的基于 systemd 的 Linux 系统中都可以使用。</p>
-<ul>
-<li>查看当前时区</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">timedatectl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>查看所有时区</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">timedatectl list-timezones<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>设置时区</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">timedatectl set-timezone Asia/Shanghai  <span class="token comment"># 中国 “Asia/Shanghai”</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="解压缩"><a href="#解压缩" class="headerlink" title="解压缩"></a>解压缩</h3>
       
     </div>
 
