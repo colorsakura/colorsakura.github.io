@@ -40,9 +40,7 @@ darkmode: true
 
 pjax: true
 
-auto_excerpt:
-  enable: true
-  length: 80
+excerpt_description: true
 
 preconnect: true
 mobile_layout_economy: true
