@@ -87,30 +87,6 @@ define DIRECT-IPV4 = {
     $chnroute_ipv4,
 }
 
-table inet firewall {
-  chain input {
-    type filter hook input priority 0; policy drop;
-
-    udp dport dhcpv6-client accept
-
-    # loopback interface
-    iif "lo" accept comment "Accept any localhost traffic"
-    iif != "lo" ip daddr 127.0.0.0/8 counter packets 0 bytes 0 drop comment "drop connections to loopback not coming from loopback"
-    ct state invalid log prefix "Invalid-Input: " level info flags all counter packets 0 bytes 0 drop comment "Drop invalid connections"
-
-    # icmp
-    icmp type echo-request limit rate 20 bytes/second burst 500 bytes counter packets 0 bytes 0 accept comment "No ping floods"
-    icmp type echo-request drop comment "No ping floods"
-    ct state { established, related } counter packets 0 bytes 0 accept comment "Accept traffic originated from us"
-    icmp type { destination-unreachable, router-advertisement, router-solicitation, time-exceeded, parameter-problem } accept comment "Accept ICMP"
-    ip protocol igmp accept comment "Accept IGMP"
-
-    # open tcp ports: sshd (22), httpd (80)
-    tcp dport { ssh } ct state new limit rate 15/minute log prefix "New SSH Connection: " counter accept comment "Avoid brute force on SSH"
-    tcp dport { 80, 443 } ct state new accept comment "Accept web service"
-  }
-}
-
 table inet clash {
     chain clash-tproxy {
         # debug
@@ -136,12 +112,14 @@ table inet clash {
         fib daddr type { unspec, local, anycast, multicast } accept
         ip daddr $DIRECT-IPV4 accept
         # dport 1-1024 避免BT走代理
-        iif { lo } meta l4proto { tcp, udp } th dport 1-1024 ct direction original jump clash-tproxy
+        # iif { lo } meta l4proto { tcp, udp } th dport 1-1024 ct direction original jump clash-tproxy
+        iif { lo } meta l4proto { tcp, udp } ct direction original jump clash-tproxy
     }
 }
 ```
 
 ```nft
+# /etc/nftables.d/ipv4-private.nft
 define private_ipv4 = {
 	0.0.0.0/8,
 	10.0.0.0/8,
